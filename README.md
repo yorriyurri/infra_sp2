@@ -19,40 +19,53 @@
 
 ## Шаблон наполнения env-файла
 
-```DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql```
-```DB_NAME=postgres # имя базы данных```
-```POSTGRES_USER=postgres # логин для подключения к базе данных```
-```POSTGRES_PASSWORD=postgres # пароль для подключения к БД (установите свой)```
-```DB_HOST=db # название сервиса (контейнера)```
-```DB_PORT=5432 # порт для подключения к БД```
+```
+DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
+DB_NAME=postgres # имя базы данных
+POSTGRES_USER=postgres # логин для подключения к базе данных
+POSTGRES_PASSWORD=postgres # пароль для подключения к БД (установите свой)
+DB_HOST=db # название сервиса (контейнера)
+DB_PORT=5432 # порт для подключения к БД
+```
 
 ## Запуск проекта:
 
 ### Клонировать репозиторий:
 
-```git@github.com:yorriyurri/infra_sp2.git```
+```python
+git@github.com:yorriyurri/infra_sp2.git
+```
 
 ### Перейти в директорию infra/ и запустить docker-compose:
 
-```cd infra/```
-
-```docker-compose up```
+```python
+cd infra/
+docker-compose up
+```
 
 ### Применить миграции:
 
-```docker-compose exec web python manage.py migrate```
+```python
+docker-compose exec web python manage.py migrate
+```
 
 ### Создать суперпользователя:
 
-```docker-compose exec web python manage.py createsuperuser```
+```python
+docker-compose exec web python manage.py createsuperuser
+```
 
 ### Cобрать статические файлы::
 
-```docker-compose exec web python collecstatic --no-input```
+```python
+docker-compose exec web python collecstatic --no-input
+```
 
 ## Заполнение базы данными:
 
-```docker-compose exec web python manage.py loaddata fixtures.json```
+```python
+docker-compose exec web python manage.py loaddata fixtures.json
+```
 
 ## Примеры
 
